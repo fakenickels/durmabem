@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Calcule suas horas de sono"/>
+	<meta property="og:site_name" content="Codesleep"/>
+	<meta property="og:type" content="site"/>
+	<meta property="og:description" content="Dormir bem é melhor que dormir muito. O Sleepti ajuda você a calcular suas horas de sono."/>
+	<title>Durma Bem zzZZ...</title>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:400,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class='container'>
+		<div class='page-header'>
+			<h1><img id='logo' src='img/durmabem.png'></h1>
+		</div>
+		<div class='jumbotron' id='saying'>
+			<h1>Durma bem...</h1>
+			<p class='lead'>Quer saber a melhor hora pra acordar e ter um melhor rendimento de sono? o DurmaBem.com vai te ajudar!</p>
+		</div>
+		<div id='content' class='row'>
+			<div class='col-md-4' id='menu'>
+				<div class='row'>
+					<div class='col-md-12' id='wakeUpTime'></div>
+					<div class='col-md-12' id='sleepNow'>
+						<button type='button' class='btn btn-success' id='sleep-now'>Eu vour dormir agora</button>
+					</div>
+				</div>	
+			</div>
+			<div class='col-md-1'></div>
+			<div class='col-md-7' id='results'>
+				<h1>Clique nos botões do menu ao lado para começar</h1>
+			</div>
+		</div>
+		<div>
+			<h1>Informações</h1>
+			<hr>
+			<ol>
+				<li><p class='lead'>O cálculo presume que você demore 14 minutos para cair no sono (que é o normal)</p></li>
+				<li><p class='lead'>Uma boa noite de sono consiste em completar pelo menos 5/6 ciclos de sono</p></li>
+				<li><p class='lead'>Acordar no meio de um ciclo faz com que você se sinta cansado e groggy</p>
+				<li><p class='lead'>Acordar entre ciclos faz você se sentir melhor como um Fresh Prince of Bel-Air B)</p></li>
+			</ol>
+		</div>
+		<footer class='page-footer'>
+			<div class='row'>
+				<span class='col-md-4'>
+					<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fsleepti.codehouseco.com&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+				</span>
+				<span class='col-md-8'>
+					Baseado em sleepyti.me
+				</span>
+			</div>
+		</footer>
+	</div>
+<script type="text/x-tmpl" id='wakeUpTime-tmpl'>
+	<h3>Eu tenho que acordar às</h3>
+	<select id='wake-hour'>
+	{% for(var h = 0; h < 23; h++){ %}
+		<option val='{%= h %}'>{%= h %}</option>
+	{% } %}
+	</select><b>h</b>&nbsp;
+	<select id='wake-minutes'>
+	{% for(var h = 0; h < 60; h+=5){ %}
+		<option val='{%= h %}'>{%= h %}</option>
+	{% } %}
+	</select><b>mins</b>&nbsp;
+	<button id='wakeUpTime-btn' class='btn btn-success'>Calcular</button>
+</script>
+<script type="text/x-tmpl" id='times-list-tmpl'>
+	<h1>{%= o.title %}</h1>
+	<hr>
+	<table class='table table-striped'>
+	{% $.each(o.times, function(i, time){ %}
+		<tr>
+			<td>{%= time.getHours() %}h:{%= time.getMinutes() %}mins</td>
+		</tr>
+	{% }); %}
+	</table>
+</script>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src='js/main.js'></script>	
+<script type="text/javascript" src='js/tmpl.min.js'></script>	
+<script type="text/javascript" src='js/jquery.autotype.min.js'></script>	
+</body>
+</html>

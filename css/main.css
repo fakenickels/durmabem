@@ -1,0 +1,64 @@
+body, #saying .lead, #menu	{
+	font-family: 'Quicksand';
+	font-size: 1.8em;
+}
+h1, h2, h3 {
+	font-family:'Hammersmith One';
+	font-weight: bolder;
+}
+body {
+	background: url('../img/background.png'), -webkit-radial-gradient(#006, #000);
+	font-family: 'Quicksand';
+	font-size: 20px;
+	color:#fff;
+}
+#logo { width: 200px; }
+#saying {
+	padding:20px;
+	color:#fff;
+	background:none;
+	text-align: center;
+}
+#saying h1 {
+	font-size: 4em;
+}
+#saying .lead {
+	padding:20px;
+	background:rgba(0,0,0,0.4);
+}
+#content {
+	padding:20px;
+	background: rgba(255,255,255,0.3);
+}
+#menu {
+	background:#fff;
+	color:#000;
+	text-align: center;
+}
+.btn {
+	border-radius: 0;
+	background: #005;
+	padding:15px 20px;
+	border:none;
+	font-size: 18px;
+	width: 100%;
+}
+#wakeUpTime-btn {
+	margin-top: 10px;
+}
+#sleepNow .btn {
+	margin:10px 0;
+}
+#wakeUpTime h3 {
+
+}
+.page-footer {
+	margin-top: 20px;
+	padding:20px;
+	border-top: solid 1px #fff;
+}
+table {
+	color:#000;
+	text-align: center;
+	background:rgba(255,255,255,0.2);
+}
